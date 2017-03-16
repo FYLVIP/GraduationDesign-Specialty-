@@ -1,0 +1,25 @@
+<?php
+$c=$_POST["contern"]; //获取表单提交过来的contern的值
+if(empty($c)){  //如果$c为空
+echo "<script type='text/javascript'>alert('留言内容不能为空');history.back();</script>";  //弹窗
+}
+
+else{
+$c=trim($c);  //去掉两端的空格
+$c=htmlspecialchars($c);  //把html标签转换为实体
+$c=addslashes($c);  //转义
+$cc=mysqli_connect("localhost","root","");  //连接MySQL数据库
+$db=mysqli_select_db($cc,"web");  //选择test数据库
+$sql="insert into liuyan (content) values ('$c')";
+$r=mysqli_query($cc,$sql); //执行SQL语句
+if($r){  //如果SQL语句执行成功
+echo "<script type='text/javascript'>alert('留言成功！');</script>";  //弹窗
+header("refresh:1;url='board.php'");
+}else{
+echo "<script type='text/javascript'>alert('留言失败');history.back();</script>";  //弹窗
+}
+//location.href('board.php')
+//mysqli_close($cc); //关闭数据库的连接
+}
+//}
+?>

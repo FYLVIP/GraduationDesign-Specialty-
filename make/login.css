@@ -1,0 +1,90 @@
+body {
+  /*font-family: 'Open Sans', sans-serif;*/
+  background-color: #f7f7f7;
+  position: relative;
+  margin: 0px;
+  font-size: 12px;
+  padding: 0px;
+}
+.page-content > .row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  margin-top: 30px;
+}
+.login-bg {
+
+  background-color: #eff0f3;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+.login-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.login-wrapper .box {
+  margin: 0 auto;
+  padding: 30px 0 30px;
+  float: none;
+
+  box-shadow: rgba(0, 0, 0, 0.4) 0 1px 3px, rgba(0, 0, 0, 0.35) 0 0 1px;
+  background: #fff;
+
+  border-radius: 6px;
+}
+.login-wrapper .box .content-wrap {
+  width: 82%;
+  margin: 0 auto;
+}
+.login-wrapper .box h6 {
+  text-transform: uppercase;
+  margin-bottom: 35px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.login-wrapper .box input[type="text"],
+.login-wrapper .box input[type="password"] {
+  font-size: 15px;
+  height: 40px;
+  margin-bottom: 10px;
+  border-color: #b2bfc7;
+  padding-left: 12px;
+}
+
+.login-wrapper .box input[type="password"] {
+  margin-bottom: 10px;
+}
+
+.login-wrapper .box .action {
+  position: relative;
+  top: 30px;
+  padding: 15px 0px;
+}
+
+.login-wrapper .already {
+  margin: 0 auto;
+  float: none;
+  text-align: center;
+  font-size: 13px;
+  margin-top: 30px;
+}
+
+
+
+
+.login-wrapper .box .social{
+  margin: 0 auto;
+  width: 90%;
+}
+
+.login-wrapper .box .social a.face_login span.face_icon{
+  background-color: #39599F;
+    border-radius: 3px 0 0 3px;
+    float: left;
+    height: 37px;
+    text-align: center;
+    width: 51px;
+}
+
+
