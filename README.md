@@ -1,7 +1,7 @@
 # GraduationDesign-Specialty-
 ## 专科时期的毕设
 
-*基于BootStrap+H5+PHP+Mysql的毕业设计
+*基于BootStrap+H5+PHP+Mysql+Json的毕业设计
 
 *就是网页而已
 
