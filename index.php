@@ -10,6 +10,7 @@ session_start();
   <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="./bootstrap/css/carousel.css" rel="stylesheet">
 
+
 </head>
 <body>
 <div >
@@ -62,17 +63,38 @@ session_start();
 
 
           </ul>
-             <form class="navbar-form navbar-right" role="search">
+             <form onsubmit="return search();" class="navbar-form navbar-right" role="search">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" id="search_input" class="form-control" placeholder="Search">
             </div>
-            <button type="submit" class="btn btn-primary">搜索</button>
+            <button type="submit" id="search_btn" class="btn btn-primary">搜索</button>
         </form>
       </div>
     </div>
   </nav>
 
-<!---------------------------------->
+  <script>
+
+	function search(){
+	    var key = $('#search_input').val();
+	    console.log(key);
+	    //清空搜索结果
+	    $('#search_tip').slideUp();
+	    $(".col-md-3").fadeIn();
+	    //搜索
+	    if($.trim(key)!=""){
+	        $('#search_key').text(key);
+	        $('#search_tip').slideDown();
+	        $('#search_input').val(key);
+	        $(".col-md-3").fadeOut().filter(":contains('"+key+"')").fadeIn();
+	    }else{
+	        location.hash = '';
+	    }
+	    return false;
+	}
+  </script>
+
+<!-- ============================= -->
 
   <div>
 
@@ -87,8 +109,7 @@ session_start();
                 <img class="first-slide" src="img/photo/in1.jpg" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption">
-<!--                        <h1><kbd>Docker实践</kbd></h1>-->
-<!--                        <p><a class="btn btn-lg btn-primary" href="#" role="button">对，点我</a></p>-->
+
                     </div>
                 </div>
             </div>
@@ -96,18 +117,14 @@ session_start();
                 <img class="second-slide" src="img/photo/in2.jpg" alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption">
-<!--                        <h1><a href="hunong.html"><kbd>Linux源镜像配置说明</kbd><a></h1>-->
-<!--                        <p><a class="btn btn-lg btn-primary" href="#" role="button">对，点我</a></p>-->
+
                     </div>
                 </div>
             </div>
             <div class="item">
                 <img class="third-slide" src="img/photo/in3.jpg" alt="Third slide" >
                 <div class="container">
-                    <div class="carousel-caption">
-<!--                        <h1>招商</h1>-->
-<!--                        <p><a class="btn btn-lg btn-primary" href="#" role="button">招商</a></p>-->
-                    </div>
+              
                 </div>
             </div>
         </div>
@@ -124,7 +141,7 @@ session_start();
   <!-- 首页课程-->
   <div class="container">
       <div class="page-header">
-  	<h1>每日推荐</h1>
+  	<h1><span class="glyphicon glyphicon-star"></span>每日推荐</h1>
       </div>
 	<div class="row clearfix">
 		<div class="col-md-12 column">
@@ -187,8 +204,204 @@ session_start();
 		</div>
 	</div>
 </div>
-  	
-  
+  	<!--  -->
+  	  <div class="container">
+      <div class="page-header">
+  	<h1><span class="glyphicon glyphicon-flag"></span>安全精选</h1>
+      </div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<img alt="300x200" src="img/kcimg/aq1.jpg"/>
+						<div class="caption">
+							<h3>
+								云安全浅谈
+							</h3>
+							<p>
+								 <a class="btn btn-primary" href="coursera/coursera1.php">开始学习</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<img alt="300x200" src="img/kcimg/aq2.jpg"  />
+						<div class="caption">
+							<h3>
+								防火墙技术
+							</h3>
+
+							<p>
+								 <a class="btn btn-primary" href="#">开始学习</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<img alt="300x200" src="img/kcimg/aq3.jpg" />
+						<div class="caption">
+							<h3>
+								防御者
+							</h3>
+
+							<p>
+								 <a class="btn btn-primary" href="#">开始学习</a>
+							</p>
+						</div>
+					</div>
+				</div>
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <img alt="300x200" src="img/kcimg/aq4.jpg"/>
+                        <div class="caption">
+                            <h3>
+                               Kali Linux
+                            </h3>
+                            <p>
+                                <a class="btn btn-primary" href="coursera/coursera1.php">开始学习</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
+  	<!--  -->
+  	  <div class="container">
+      <div class="page-header">
+  	<h1><span class="glyphicon glyphicon-book"></span>开发经典</h1>
+      </div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<img alt="300x200" src="img/kcimg/az1.jpg"/>
+						<div class="caption">
+							<h3>
+								C语言二级
+							</h3>
+							<p>
+								 <a class="btn btn-primary" href="coursera/coursera1.php">开始学习</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<img alt="300x200" src="img/kcimg/az2.jpg"  />
+						<div class="caption">
+							<h3>
+								Python自动化运维
+							</h3>
+
+							<p>
+								 <a class="btn btn-primary" href="#">开始学习</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<img alt="300x200" src="img/kcimg/az3.jpg" />
+						<div class="caption">
+							<h3>
+								Shell脚本
+							</h3>
+
+							<p>
+								 <a class="btn btn-primary" href="#">开始学习</a>
+							</p>
+						</div>
+					</div>
+				</div>
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <img alt="300x200" src="img/kcimg/az4.jpg"/>
+                        <div class="caption">
+                            <h3>
+                               Python应用
+                            </h3>
+                            <p>
+                                <a class="btn btn-primary" href="coursera/coursera1.php">开始学习</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
+  	<!--  -->
+    <div class="container">
+      <div class="page-header">
+  	<h1><span class="glyphicon glyphicon-hdd"></span>运维精品</h1>
+      </div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<img alt="300x200" src="img/kcimg/hd1.jpg"/>
+						<div class="caption">
+							<h3>
+								浅谈DOCKER
+							</h3>
+							<p>
+								 <a class="btn btn-primary" href="coursera/coursera1.php">开始学习</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<img alt="300x200" src="img/kcimg/hd2.jpg"  />
+						<div class="caption">
+							<h3>
+								RHCE考试心得
+							</h3>
+
+							<p>
+								 <a class="btn btn-primary" href="#">开始学习</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<img alt="300x200" src="img/kcimg/hd3.jpg" />
+						<div class="caption">
+							<h3>
+								OCP考试经验
+							</h3>
+
+							<p>
+								 <a class="btn btn-primary" href="#">开始学习</a>
+							</p>
+						</div>
+					</div>
+				</div>
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <img alt="300x200" src="img/kcimg/hd4.jpg"/>
+                        <div class="caption">
+                            <h3>
+                               AWS应用
+                            </h3>
+                            <p>
+                                <a class="btn btn-primary" href="coursera/coursera1.php">开始学习</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
 </div>
 <!--  -->
 
@@ -199,7 +412,7 @@ session_start();
     </div>
 </footer>
 
-  <script src="make/jquery-2.1.1.min.js"></script>
+  <script src="./bootstrap/js/jquery-1.9.1.min.js"></script>
   <script src="./bootstrap/js/bootstrap.min.js"></script>
 
 </body>
