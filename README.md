@@ -24,9 +24,8 @@
 
 * 李市长（没有Github Js支持）
 
-* 大顺哥(同上)
+* 大顺哥
 
-* k姐（同上 论文支持）
 * 李总 https://github.com/NekoTora
 ```php
 <?php
