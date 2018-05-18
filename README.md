@@ -30,5 +30,5 @@
 ```php
 <?php
 echo"fuck";
->
+?>
 ```
